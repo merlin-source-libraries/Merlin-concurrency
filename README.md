@@ -8,6 +8,8 @@ Details about installation instructions and usage recommendations can be found [
 
 ### 2 - Overview
 
+#### Thread pool
+
 This is a C++ thread pool implementation based on the standard library requiring at least C++11.
 
 - A `thread_pool` object manages a pool of threads and a tasks queue.
@@ -32,9 +34,9 @@ This is a C++ thread pool implementation based on the standard library requiring
 
 _A Doxygen code documentation is provided and can be generated for more information about the full available features_
 
-### 3 - Basic usage examples
+##### Basic usage examples
 
-#### Use case 1:
+- **Use case 1:**
 Considering the following task:
 ```cpp
 //.hpp
@@ -78,7 +80,7 @@ tp.stop();
 std::cout << "Thread pool stopped !" << std::endl;
 ```
 
-#### Use case 2
+- **Use case 2**
 Now let's consider we have 3 tasks `t1`, `t2` and `t3` to execute. And `t3` must wait that `t2` has finished before being started.
 
 We can define a task that will notify when its execution is completed:
@@ -149,3 +151,4 @@ tp.wait_for_idle();
 // Stop
 tp.stop();
 ```
+---
