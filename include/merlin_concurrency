@@ -1,0 +1,7 @@
+#ifndef MERLIN_CONCURRENCY
+#define MERLIN_CONCURRENCY
+
+#include <merlin_thread_pool.hpp>
+
+#endif
+
