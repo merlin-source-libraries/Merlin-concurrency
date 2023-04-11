@@ -3,7 +3,9 @@
 namespace merl
 {
     thread_pool::thread_pool(std::size_t threads_count) : threads_count_(threads_count), alive_(false), running_tasks_count_(0)
-    {}
+    {
+        threads_pool_.reserve(threads_count_);
+    }
     thread_pool::~thread_pool()
     {
         this->stop(SYNC);
