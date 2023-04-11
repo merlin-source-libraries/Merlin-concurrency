@@ -26,7 +26,7 @@ namespace merl
             // Start
             alive_ = true;
             for(std::size_t i = 0; i < threads_count_; ++i)
-                threads_pool_.push_back(std::thread(&thread_pool::spin, this));
+                threads_pool_.emplace_back(&thread_pool::spin, this);
         }
     }
     void thread_pool::stop(STOP_POLICY sp)
